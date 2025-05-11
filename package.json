@@ -3,6 +3,7 @@
   "build": "tsc -b && vite build",
   "start": "vite preview"
 }
+"build": "tsc -b && vite build"
 
 {
   "name": "moncy-portfolio",
