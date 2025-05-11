@@ -1,3 +1,9 @@
+"scripts": {
+  "dev": "vite",
+  "build": "tsc -b && vite build",
+  "start": "vite preview"
+}
+
 {
   "name": "moncy-portfolio",
   "private": true,
