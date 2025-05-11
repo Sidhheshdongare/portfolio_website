@@ -3,6 +3,13 @@ import WorkImage from "./WorkImage";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
+useGSAP(() => {
+  gsap.to(".my-element", { x: 100 });
+});
+
 gsap.registerPlugin(useGSAP);
 
 const Work = () => {
