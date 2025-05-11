@@ -1,15 +1,13 @@
-import { useEffect } from "react";
 import "./styles/Work.css";
 import WorkImage from "./WorkImage";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP);
 
 const Work = () => {
-  useEffect(() => {
+  useGSAP(() => {
     let translateX: number = 0;
-
     function setTranslateX() {
       const box = document.getElementsByClassName("work-box");
       const rectLeft = document
@@ -19,13 +17,12 @@ const Work = () => {
       const parentWidth = box[0].parentElement!.getBoundingClientRect().width;
       let padding: number =
         parseInt(window.getComputedStyle(box[0]).padding) / 2;
-      translateX =
-        rect.width * box.length - (rectLeft + parentWidth) + padding;
+      translateX = rect.width * box.length - (rectLeft + parentWidth) + padding;
     }
 
     setTranslateX();
 
-    const timeline = gsap.timeline({
+    let timeline = gsap.timeline({
       scrollTrigger: {
         trigger: ".work-section",
         start: "top top",
@@ -42,13 +39,7 @@ const Work = () => {
       duration: 40,
       delay: 0.2,
     });
-
-    return () => {
-      timeline.scrollTrigger?.kill();
-      timeline.kill();
-    };
   }, []);
-
   return (
     <div className="work-section" id="work">
       <div className="work-container section-container">
@@ -61,6 +52,7 @@ const Work = () => {
               <div className="work-info">
                 <div className="work-title">
                   <h3>0{index + 1}</h3>
+
                   <div>
                     <h4>Project Name</h4>
                     <p>Category</p>
