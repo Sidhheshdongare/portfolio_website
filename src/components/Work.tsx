@@ -71,3 +71,10 @@ const Work = () => {
 };
 
 export default Work;
+import { useEffect } from "react";
+// rest of imports...
+
+useEffect(() => {
+  // gsap animation logic here
+}, []);
+
