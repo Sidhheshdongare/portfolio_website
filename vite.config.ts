@@ -6,5 +6,3 @@ export default defineConfig({
   plugins: [react()],
 });
 gsap.registerPlugin(ScrollSmoother);
-git add.
-git commit -m "Fix gsap imports and remove useGSAP for Vercel deploy"
