@@ -1,3 +1,6 @@
+import { ScrollSmoother } from "gsap/all";
+gsap.registerPlugin(ScrollSmoother);
+
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { StrictMode } from "react";
