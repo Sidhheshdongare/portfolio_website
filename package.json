@@ -2,12 +2,16 @@
 {
   "name": "moncy-portfolio",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
-"scripts": {
-    "dev": "next dev"
-  "build": "tsc -b && vite build",
-  "start": "vite preview"
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "^13.4.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 },
   "build": "tsc -b && vite build"
 
