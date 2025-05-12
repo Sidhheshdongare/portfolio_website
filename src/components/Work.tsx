@@ -1,13 +1,17 @@
-import { useEffect } from "react";
+import "./styles/Work.css";
+import WorkImage from "./WorkImage";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
+useGSAP(() => {
+  gsap.to(".my-element", { x: 100 });
+});
+
+gsap.registerPlugin(useGSAP);
 
 const Work = () => {
-  useEffect(() => {
+  useGSAP(() => {
     let translateX: number = 0;
-    
     function setTranslateX() {
       const box = document.getElementsByClassName("work-box");
       const rectLeft = document
@@ -40,7 +44,6 @@ const Work = () => {
       delay: 0.2,
     });
   }, []);
-
   return (
     <div className="work-section" id="work">
       <div className="work-container section-container">
@@ -72,3 +75,10 @@ const Work = () => {
 };
 
 export default Work;
+import { useEffect } from "react";
+// rest of imports...
+
+useEffect(() => {
+  // gsap animation logic here
+}, []);
+
