@@ -1,12 +1,10 @@
 import { gsap } from "gsap";
-import { StrictMode } from "react";
-import { createRoot } from "react-dom/client";
-import App from "./App.tsx";
-import "./index.css";
+    
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+// ScrollSmoother requires ScrollTrigger
+import { ScrollSmoother } from "gsap/ScrollSmoother";
 
-// Ensure all required GSAP plugins are properly registered
-import { ScrollSmoother } from "gsap/all";
-gsap.registerPlugin(ScrollSmoother);
+gsap.registerPlugin(ScrollTrigger,ScrollSmoother);
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
